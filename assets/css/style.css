@@ -6,10 +6,31 @@ body {
     background: white;
 }
 
-form.example input[type=text] {
-  padding: 10px;
+.input-container input[type=text] {
+  padding-left:40px;
   font-size: 17px;
   border: 1px solid grey;
   width: 80%;
   background: #f1f1f1;
 }
+
+.input-container {
+  position: relative;
+}
+
+#cancel {
+  position: absolute;
+  left: -100;
+  top: 4px;
+ 
+}
+
+#mapMarker {
+  position: absolute;
+  left: 3;
+  top: 4px;
+  padding-left: 10px;
+ 
+}
+
+ 

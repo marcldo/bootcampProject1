@@ -8,36 +8,43 @@
     <title>Things To Do</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/reset.css">
 
 </head>
 
 <!-- Header -->
-<area>
+
 <div class="container-fluid">
     <div class="jumbotron">
-        <h1 class="text-center"> Things2Do </h1>
+        <h1 class="text-center"> Things2do </h1>
+    </div>
+
+
+
+    <!-- Start Date -->
+    <label for="start">Start Date:</label>
+    <input type="date" id="start" name="trip-start" value="yyyy-mm-dd" min="2019-01-01" max="2030-12-31">
+    
+    <!-- End Date -->
+    <label for="start">End Date:</label>
+    <input type="date" id="end" name="trip-end" value="yyyy-mm-dd" min="2019-01-01" max="2030-12-31">
+
+    <!-- Cities Name Search witch icons-->
+    <div class="input-container">
+        <i class="fa fa-map-marker-alt" id="mapMarker"></i>
+        <input type="text" id="submit" placeholder="City Name" name="search">
+    
+    <!-- Search Button -->
+        <button id="submit">Search</button>
+
+
+        <!----<input type="text" id="cities" placeholder="City Name">-->
+
     </div>
 </div>
 
-
-<!-- Cities Name Search -->
-<div class="row">
-    <div class="col-md-12 text-center">
-        <input type="text" id="cities" placeholder="City Name">
-        <button id="submit">Submit</button>
-
-    </div>
-</div>
-
-
- <!-- Start Date-->
-        <label for="start">Start Date:</label>
-        <input type="date" id="start" name="trip-start" value="2019-07-22" min="2019-01-01" max="2030-12-31">
-<!-- End Date-->
-        <label for="start">End Date:</label>
-        <input type="date" id="end" name="trip-end" value="2019-07-22" min="2019-01-01" max="2030-12-31">
 
 
 
