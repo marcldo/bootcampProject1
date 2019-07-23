@@ -3,7 +3,7 @@ box-sizing: border-box;
 }
 
 body {
-    background: rgb(47, 3, 47);
+    background: white;
 }
 
 form.example input[type=text] {
