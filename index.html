@@ -22,7 +22,7 @@
 </div>
 
 <!--Search and Dropdown list Bar-->
-<div class="conatiner">
+<!----div class="conatiner">
     <div class="row">
         <div class="col-md-12 text-center">
             <input type="text" id="topicList" placeholder="Search" list="topics">
@@ -33,26 +33,31 @@
                 <option value="Sports">
             </datalist>
             <div class="input-group-btn">
-            </div>
+            </div>-->
 
 <!--Cities Name Search-->
-            <div class="col-md-12 text-center">
-                <input type="text" id="topicList" placeholder="City Name" list="city">
-                <datalist id="city">
+<div class="col-md-12 text-center">
+    <input type="text" id="cities" placeholder="City Name">
+    <!----datalist id="city">
                     <option value="United State">
                     <option value="Canada">
-                </datalist>
-                <div class="input-group-btn">
+                    </datalist>
+                <div class="input-group-btn"-->
 
 
-                </div>
-            </div>
+    <button id="submit">Submit</button>
+</div>
+
+<label for="start">Start Date:</label>
+<input type="date" id="start" name="trip-start" value="2019-07-22" min="2019-01-01" max="2030-12-31">
+
+<label for="start">End Date:</label>
+<input type="date" id="start" name="trip-start" value="2019-07-22" min="2019-01-01" max="2030-12-31">
 
 
 
-
-            <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-            <script src="assets/javascript/app.js"></script>
-            </body>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script src="assets/javascript/app.js"></script>
+</body>
 
 </html>
