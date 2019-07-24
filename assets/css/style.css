@@ -6,6 +6,7 @@ body {
     background: white;
 }
 
+/*  Map marker */
 .input-container input[type=text] {
   padding-left:40px;
   font-size: 17px;
@@ -16,13 +17,6 @@ body {
 
 .input-container {
   position: relative;
-}
-
-#cancel {
-  position: absolute;
-  left: -100;
-  top: 4px;
- 
 }
 
 #mapMarker {
