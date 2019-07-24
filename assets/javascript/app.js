@@ -10,37 +10,6 @@ $("#submit").on("click", function() {
       xhr.setRequestHeader("user-key", "800b518a5824533907d36cfa8844ff50 ");
     }
   }).then(function(response) {
-    //     var i;
-    //     const tb = $("<table>");
-
-    //     const tr = $("<tr>");
-    //     const theader = $("<th>City Name</th><th>Country Name</th><th>Flag</th>");
-
-    //     const trend = $("</tr>");
-    //     $("table#datainsert").css("border", "2");
-    //     $("#datainsert").append(`${tb} ${tr} ${theader} ${trend} ${tbend}`);
-    //     for (i = 0; i < response.location_suggestions.length; i++) {
-    //       var result = response.location_suggestions[i];
-    // console.log(result);
-    // const tdata = "<td >";
-    // const tdataend = "</td>";
-
-    // $("#datainsert").append(
-    //   `${tr}${tdata}${result.name} ${result.country_name} <img src="${
-    //     result.country_flag_url
-    //   }">${tdataend} ${trend}`
-    //       );
-    //     }
-    // $("#datainsert").append(`${tb} ${tr} ${theader} ${trend} ${tbend}`);
-    // $(response.location_suggestions).each(function(i,data)
-    // {
-    //   console.log("inside each  ")
-    //   console.log(data)
-
-    // var result = data[i];
-
-    //  })
-
     var op = "<table>";
 
     op +=
