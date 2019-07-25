@@ -13,18 +13,15 @@ $("#submit").on("click", function() {
     var op = "<table>";
 
     op +=
-      "<tr><th> CITY NAME</th> <th>COUNTRY NAME</th> <th>FLAG IMAGE</th></tr>";
+      "<tr><th> CITY</th></tr>";
     console.log(response.country_flag_url);
     for (i = 0; i < response.location_suggestions.length; i++) {
       var result = response.location_suggestions[i];
       op +=
         "<tr> <td>" +
-        result.name +
-        "</td><td>" +
-        result.country_name +
-        "</td><td><img src=" +
+        result.name + "<img src=" +
         result.country_flag_url +
-        "></img></td>";
+        "></img> </td> </tr>";
     }
 
     op += "</table>";
@@ -32,5 +29,20 @@ $("#submit").on("click", function() {
   });
 });
 $("#datainsert").on("click", function(e) {
+  
   console.log(e.target);
+  var tableCity = $(e.target).text();
+  console.log(tableCity);
+  var city = tableCity.substring(0, tableCity.indexOf(","));
+  console.log(city);
+  var state = tableCity.substring(tableCity.indexOf(",") + 2);
+  console.log(state);
+  var tQueryURL = "https://app.ticketmaster.com/discovery/v2/events?apikey=7elxdku9GGG5k8j0Xm8KWdANDgecHMV0&locale=*&city=" + city + "&stateCode=" + state;
+
+  $.ajax({
+    url: tQueryURL,
+    method: "GET",
+  }).then(function(response){
+    console.log(response);
+  });
 });
