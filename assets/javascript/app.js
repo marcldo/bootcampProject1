@@ -8,17 +8,18 @@ $("#submit").on("click", function() {
     method: "GET",
     beforeSend: function(xhr) {
       xhr.setRequestHeader("user-key", "800b518a5824533907d36cfa8844ff50 ");
-    },
-    cache: false
+    }
   }).then(function(response) {
     var op = "<table>";
 
-    op +=
-      "<tr><th> CITY NAME</th> <th>COUNTRY NAME</th> <th>FLAG IMAGE</th></tr>";
+    op += "<tr><th> CITY</th></tr>";
     console.log(response.country_flag_url);
     for (i = 0; i < response.location_suggestions.length; i++) {
       var result = response.location_suggestions[i];
-      op += `<tr class="location" data-name="${result.name}"> <td class="${i}">
+      console.log(result);
+      op += `<tr class="location" data-name="${result.name} data-id=${
+        result.country_id
+      } data-state=${result.state_code}" > <td class="${i}">
         ${result.name} 
         </td><td class="${i}"> 
         ${result.country_name} 
@@ -29,23 +30,49 @@ $("#submit").on("click", function() {
 
     op += "</table>";
     document.getElementById("datainsert").innerHTML = op;
-    setApiData(response);
   });
 });
 
 $("#datainsert").on("click", ".location", function(e) {
   console.log("hey, location got clicked", $(this).data("name"));
+  console.log("hey, location got clicked", $(this).data("id"));
 });
 
-function setApiData(response) {
-  $("#datainsert").on("click", function(e) {
-    for (var i = 0; i < response.location_suggestions.length; i++) {
-      if (e.target.attributes.class.nodeValue == i) {
-        console.log(response.location_suggestions[i]);
-      }
+$("#datainsert").on("click", function(e) {
+  console.log(e.target);
+  var tableCity = $(e.target).text();
+  console.log(tableCity);
+  var city = tableCity.substring(0, tableCity.indexOf(","));
+  console.log(city);
+  var state = tableCity.substring(tableCity.indexOf(",") + 2);
+  console.log(state);
+  var tQueryURL =
+    "https://app.ticketmaster.com/discovery/v2/events?apikey=7elxdku9GGG5k8j0Xm8KWdANDgecHMV0&locale=*&city=" +
+    city +
+    "&stateCode=" +
+    state;
+
+  $.ajax({
+    url: tQueryURL,
+    method: "GET"
+  }).then(function(response) {
+    console.log(response);
+    ("<tr><th> CITY</th></tr>");
+    var eventsTable = "<table>";
+    eventsTable += "<tr><th> EVENTS </th></tr>";
+    for (var i = 0; i < 10; i++) {
+      var result = response._embedded.events[i];
+      eventsTable += `<tr><td><a href=${result.url}>${
+        result.name
+      } &nbsp; &nbsp;  ${result._embedded.venues[0].name} &nbsp; &nbsp; ${
+        result.dates.start.localDate
+      }</a></td></tr>`;
+      console.log(result.url);
     }
+    eventsTable += "</table>";
+    document.getElementById("eventsData").innerHTML = eventsTable;
   });
-  // $("#submit").on("click", function() {
-  //   window.location.reload();
-  // });
-}
+});
+/*$("#eventsData").on("click", function (e) {
+   console.log()
+ })*/
