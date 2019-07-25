@@ -22,6 +22,27 @@ table#datainsert {
   height: auto;
   width: 500px;
 }
+/*  Map marker */
+.input-container input[type=text] {
+  padding-left:40px;
+  font-size: 17px;
+  border: 1px solid grey;
+  width: 20%;
+  background: #f1f1f1;
+}
+
+.input-container {
+  position: relative;
+}
+
+#mapMarker {
+  position: absolute;
+  left: 3;
+  top: 4px;
+  padding-left: 10px;
+ 
+}
+
 
 tr:nth-child(1)
 {

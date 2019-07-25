@@ -39,6 +39,7 @@ $("#datainsert").on("click", function (e) {
   console.log(state);
   var tQueryURL = "https://app.ticketmaster.com/discovery/v2/events?apikey=7elxdku9GGG5k8j0Xm8KWdANDgecHMV0&locale=*&city=" + city + "&stateCode=" + state;
 
+
   $.ajax({
     url: tQueryURL,
     method: "GET",
