@@ -12,16 +12,17 @@ $("#submit").on("click", function () {
   }).then(function (response) {
     var op = "<table>";
 
-    op +=
-      "<tr><th> CITY</th></tr>";
-    console.log(response.country_flag_url);
+    op += "<tr><th> CITY</th></tr>";
     for (i = 0; i < response.location_suggestions.length; i++) {
       var result = response.location_suggestions[i];
-      op +=
-        "<tr> <td>" +
-        result.name + "<img src=" +
-        result.country_flag_url +
-        "></img> </td> </tr>";
+      console.log(result);
+      op += `<tr> <td class="location" data-name="${result.name}" data-id="${
+        result.country_id
+        }" data-state="${result.state_code}" > 
+        ${result.name} 
+        <img src= 
+        ${result.country_flag_url} 
+        "></img></td>`;
     }
 
     op += "</table>";
@@ -35,9 +36,13 @@ $("#datainsert").on("click", function (e) {
   console.log(tableCity);
   var city = tableCity.substring(0, tableCity.indexOf(","));
   console.log(city);
-  var state = tableCity.substring(tableCity.indexOf(",") + 2);
+  var state = $(this).data("state");
   console.log(state);
-  var tQueryURL = "https://app.ticketmaster.com/discovery/v2/events?apikey=7elxdku9GGG5k8j0Xm8KWdANDgecHMV0&locale=*&city=" + city + "&stateCode=" + state;
+  var tQueryURL =
+    "https://app.ticketmaster.com/discovery/v2/events?apikey=7elxdku9GGG5k8j0Xm8KWdANDgecHMV0&locale=*&city=" +
+    city +
+    "&stateCode=" +
+    state;
 
 
   $.ajax({
@@ -61,4 +66,3 @@ console.log(result.url)
 /*$("#eventsData").on("click", function (e) {
    console.log()
  })*/
-
