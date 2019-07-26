@@ -67,7 +67,7 @@ $("#datainsert").on("click", ".location", function (e) {
     eventsTable += "</table>";
     document.getElementById("eventsData").innerHTML = eventsTable;
   });
-  
+
   var zQueryURL = "https://developers.zomato.com/api/v2.1/collections?city_id=" + $(this).data("city-id");
 
   $.ajax({
@@ -78,6 +78,18 @@ $("#datainsert").on("click", ".location", function (e) {
     }
   }).then(function (response) {
     console.log(response);
+    console.log(response.collections[0]);
+    var collectionsTable = "<table>";
+    collectionsTable += "<tr><th> Restaurants </th></tr>";
+    for (var i = 0; i < 10; i++) {
+      var result = response.collections[i].collection;
+      collectionsTable += `<tr><td><a href=${result.url} target = "_blank">${
+        result.description
+        }</a></td></tr>`;
+
+    }
+    collectionsTable += "</table>";
+    document.getElementById("collectionsData").innerHTML = collectionsTable;
   });
 });
 
