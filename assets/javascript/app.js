@@ -79,10 +79,10 @@ $("#datainsert").on("click", ".location", function (e) {
     console.log(response);
     console.log(response.collections[0]);
     var collectionsTable = "<table>";
-    collectionsTable += "<tr><th> Restaurants </th></tr>";
+    collectionsTable += "<tr><th> RESTAURANTS </th></tr>";
     for (var i = 0; i < 10; i++) {
       var result = response.collections[i].collection;
-      collectionsTable += `<tr><td><a href=${result.url} target = "_blank">${
+      collectionsTable += `<tr><td><a href=${result.url} target = "_blank"><img src=${result.image_url} align="left" width="300" height="200">${
         result.description
         }</a></td></tr>`;
 

@@ -22,37 +22,45 @@
     </div>
 </div>
 
-
-<!--Cities Name Search-->
-<div class="col-md-12 text-center">
-    <!-- Cities Name Search witch icon-->
-    <div class ="inputInfo">
-        <div class="date">
-            <label for="start">Start Date:</label>
-            <input type="date" id="start" name="trip-start" value="yyyy-mm-dd" min="2019-01-01" max="2050-12-31">
-            <!--End Date-->
-            <label for="start">End Date:</label>
-            <input type="date" id="end" name="trip-start" value="yyyy-mm-dd" min="2019-01-01" max="2050-12-31">
+<div class="input-container">
+    <!--Cities Name Search-->
+    <div class="col-md-12 text-center">
+        <!-- Cities Name Search witch icon-->
+        <div class="inputInfo">
+            <div class="date">
+                <label for="start">Start Date:</label>
+                <input type="date" id="start" name="trip-start" value="yyyy-mm-dd" min="2019-01-01" max="2050-12-31">
+                <!--End Date-->
+                <label for="start">End Date:</label>
+                <input type="date" id="end" name="trip-start" value="yyyy-mm-dd" min="2019-01-01" max="2050-12-31">
+            </div>
         </div>
 
-    <div class="input-container">   
-        <i class="fa fa-map-marker-alt" id="mapMarker"></i>
-        <input type="text" id="cities" placeholder="City" name="search">
-        <button id="submit">Search</button>
-</div>
+        <div class="input-container">
+            <i class="fa fa-map-marker-alt" id="mapMarker"></i>
+            <input type="text" id="cities" placeholder="City" name="search">
+            <button id="submit">Search</button>
+        </div>
 
-    <div>
-        <table id="datainsert"></table>
+        <div class="table-container">
+            <!----<div class="d-flex justity-content-center"">-->
+                <div>
+                    <table id="datainsert"></table>
+                </div>
+<div class="d-flex justity-content-center"">
+                <div>
+                    <table id="eventsData"></table>
+                </div>
+
+                <div>
+                    <table id="collectionsData"></table>
+                </div>
+
+            </div>
+        </div>
     </div>
 
-    <div>
-        <table id="eventsData"></table>
-    </div>
-    
-    <div>
-        <table id="collectionsData"></table>
-       
-    </div>
+
 
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="assets/javascript/app.js"></script>
