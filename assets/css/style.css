@@ -67,4 +67,7 @@ text-align: center;
 tr:nth-child(1) {
   background-color: cornsilk;
 }
- 
+
+#eventsData {
+  font-size: 30px
+}

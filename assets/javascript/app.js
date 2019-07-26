@@ -13,8 +13,8 @@ $("#submit").on("click", function () {
     var op = "<table>";
     console.log(response);
     op += "<tr><th > CITY </th></tr>";
-    
-    
+
+
     for (i = 0; i < response.location_suggestions.length; i++) {
       var result = response.location_suggestions[i];
       console.log(result);
@@ -25,7 +25,7 @@ $("#submit").on("click", function () {
 
     op += "</table>";
     document.getElementById("datainsert").innerHTML = op;
-    
+
   });
 });
 
@@ -56,11 +56,11 @@ $("#datainsert").on("click", ".location", function (e) {
     eventsTable += "<tr><th> EVENTS </th></tr>";
     for (var i = 0; i < 10; i++) {
       var result = response._embedded.events[i];
-      eventsTable += `<tr><td><a href=${result.url} target= "_blank">${result.images[0]} ${
-        result.name
-        } &nbsp; &nbsp;  ${result._embedded.venues[0].name} &nbsp; &nbsp; ${
+    
+      eventsTable += `<tr><td><a href=${result.url} target= "_blank"><img src=${result.images[0].url} align="left" width="300" height="200"> ${result.name
+        }</a> <br><br> ${result._embedded.venues[0].name} <br><br> ${
         result.dates.start.localDate
-        }</a></td></tr>`;
+        }</td></tr>`;
       console.log(result.url);
     }
     eventsTable += "</table>";
