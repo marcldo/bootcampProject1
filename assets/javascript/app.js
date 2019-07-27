@@ -34,6 +34,7 @@ $("#datainsert").on("click", ".location", function (e) {
   console.log("hey, location got clicked", $(this).data("name"));
   // console.log("hey, location got clicked", $(this).data("id"));
 
+
   var tableCity = $(this).data("name");
   console.log(tableCity);
   var city = tableCity.substring(0, tableCity.indexOf(","));
@@ -56,7 +57,7 @@ $("#datainsert").on("click", ".location", function (e) {
     eventsTable += "<tr><th> EVENTS </th></tr>";
     for (var i = 0; i < 10; i++) {
       var result = response._embedded.events[i];
-    
+
       eventsTable += `<tr><td><a href=${result.url} target= "_blank"><img src=${result.images[0].url} align="left" width="300" height="200"> ${result.name
         }</a> <br><br> ${result._embedded.venues[0].name} <br><br> ${
         result.dates.start.localDate
