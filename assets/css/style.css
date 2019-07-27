@@ -38,19 +38,21 @@ header{
 
 .jumbotron{
   margin-top: 5px;
-  height: 675px;
+  height: 500px;
   background-image: url(../images/penguinImg.jpg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   box-shadow: 5px 8px 5px -5px #414141;
   z-index: 1;
+  background-size: cover;
+  background-position: center center;
 }
 
 .mainHeading{
   font-size: 100px;
   font-family: 'Josefin Sans', sans-serif;
   font-weight:  bold;
-  color: rgb(235, 235, 235); 
+  color: #ffffff; 
   padding: 30px;
   padding-bottom: 5px;
   text-shadow: 10px 5px 10px #414141;
