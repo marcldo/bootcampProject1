@@ -6,24 +6,70 @@ body {
   background: white;
 }
 
-form.example input[type="text"] {
-  padding: 10px;
-  font-size: 17px;
+/*  Map marker */
+.input-container input[type=text] {
+  padding-left:40px;
+  font-size: 20px;
   border: 1px solid grey;
-  width: 80%;
+  width: 20%;
   background: #f1f1f1;
 }
 
-table#datainsert {
-  margin-left: 40%;
-  margin-top: 2%;
-  border-spacing: 10px 10px;
-  border: 2px solid black;
-  height: auto;
-  width: 500px;
+.input-container {
+  position: relative;
+  padding: 20px;
 }
 
-tr:nth-child(1)
-{
+#mapMarker {
+  position: absolute;
+  left: 3;
+  top: 24px;
+  padding-left: 10px;
+  
+}
+
+/* Location and Date Font Size*/
+.inputInfo {
+  font-size: 20px;
+}
+
+.date {
+padding: 20px;
+}
+
+
+/* City Table */
+
+table#datainsert {
+  /*margin-left: 32%;
+  margin-top: 2%;*/
+  margin:auto;
+  border-spacing: 10px 10px;
+  /*border: 2px solid black;*/
+  height: auto;
+  width: 300px;
+  font-size: 20px;
+}
+tr:nth-child(1) {
   background-color: cornsilk;
+}
+/* Header Height*/
+table, th, td {
+  height: 60px;
+}
+
+/* Header Text */
+table, th {
+text-align: center;
+}
+
+/* Click link and Info */
+table, td {
+text-align: right ;
+
+}
+
+/* Table Font Size */
+#eventsData {
+  font-size: 20px
 }

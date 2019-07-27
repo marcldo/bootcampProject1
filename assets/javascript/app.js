@@ -12,21 +12,20 @@ $("#submit").on("click", function () {
   }).then(function (response) {
     var op = "<table>";
     console.log(response);
-    op += "<tr><th> CITY</th></tr>";
+    op += "<tr><th > CITY </th></tr>";
+
+
     for (i = 0; i < response.location_suggestions.length; i++) {
       var result = response.location_suggestions[i];
       console.log(result);
-      op += `<tr> <td class="location" data-name="${result.name}" data-id="${
-        result.country_id
-        }" data-state="${result.state_code}" data-city-id="${result.id}"> 
-        ${result.name} 
-        <img src= 
-        ${result.country_flag_url} 
-        "></img></td>`;
+      op += `<tr> <td class="location" data-name="${result.name}" data-id="${result.country_id}" data-state="${result.state_code}" 
+        data-city-id="${result.id}">  
+       <img src="${result.country_flag_url}" align="left"></img>&nbsp; &nbsp;&nbsp; &nbsp; ${result.name} </td>`;
     }
 
     op += "</table>";
     document.getElementById("datainsert").innerHTML = op;
+
   });
 });
 
@@ -57,11 +56,11 @@ $("#datainsert").on("click", ".location", function (e) {
     eventsTable += "<tr><th> EVENTS </th></tr>";
     for (var i = 0; i < 10; i++) {
       var result = response._embedded.events[i];
-      eventsTable += `<tr><td><a href=${result.url} target= "_blank">${
-        result.name
-        } &nbsp; &nbsp;  ${result._embedded.venues[0].name} &nbsp; &nbsp; ${
+    
+      eventsTable += `<tr><td><a href=${result.url} target= "_blank"><img src=${result.images[0].url} align="left" width="300" height="200"> ${result.name
+        }</a> <br><br> ${result._embedded.venues[0].name} <br><br> ${
         result.dates.start.localDate
-        }</a></td></tr>`;
+        }</td></tr>`;
       console.log(result.url);
     }
     eventsTable += "</table>";
@@ -80,10 +79,10 @@ $("#datainsert").on("click", ".location", function (e) {
     console.log(response);
     console.log(response.collections[0]);
     var collectionsTable = "<table>";
-    collectionsTable += "<tr><th> Restaurants </th></tr>";
+    collectionsTable += "<tr><th> RESTAURANTS </th></tr>";
     for (var i = 0; i < 10; i++) {
       var result = response.collections[i].collection;
-      collectionsTable += `<tr><td><a href=${result.url} target = "_blank">${
+      collectionsTable += `<tr><td><a href=${result.url} target = "_blank"><img src=${result.image_url} align="left" width="300" height="200">${
         result.description
         }</a></td></tr>`;
 
@@ -92,5 +91,4 @@ $("#datainsert").on("click", ".location", function (e) {
     document.getElementById("collectionsData").innerHTML = collectionsTable;
   });
 });
-
 

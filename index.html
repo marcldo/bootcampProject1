@@ -8,6 +8,7 @@
     <title>Things To Do</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/reset.css">
 
@@ -21,36 +22,44 @@
     </div>
 </div>
 
-
-<!--Cities Name Search-->
-<div class="col-md-12 text-center">
-    <input type="text" id="cities" placeholder="City Name" value="toronto">
-
-    <button id="submit">Submit</button>
-</div>
-
-<label for="start">Start Date:</label>
-<input type="date" id="start" name="trip-start" value="2019-07-22" min="2019-01-01" max="2030-12-31">
-
-<label for="start">End Date:</label>
-<input type="date" id="start" name="trip-start" value="2019-07-22" min="2019-01-01" max="2030-12-31">
-
-<!-- Cities Name Search witch icon-->
 <div class="input-container">
-    <i class="fa fa-map-marker-alt" id="mapMarker"></i>
-    <input type="text" id="cities" placeholder="City Name" name="search">
+    <!--Cities Name Search-->
+    <div class="col-md-12 text-center">
+        <!-- Cities Name Search witch icon-->
+        <div class="inputInfo">
+            <div class="date">
+                <label for="start">Start Date:</label>
+                <input type="date" id="start" name="trip-start" value="yyyy-mm-dd" min="2019-01-01" max="2050-12-31">
+                <!--End Date-->
+                <label for="start">End Date:</label>
+                <input type="date" id="end" name="trip-start" value="yyyy-mm-dd" min="2019-01-01" max="2050-12-31">
+            </div>
+        </div>
 
+        <div class="input-container">
+            <i class="fa fa-map-marker-alt" id="mapMarker"></i>
+            <input type="text" id="cities" placeholder="City" name="search">
+            <button id="submit">Search</button>
+        </div>
 
-    <div>
-        <table id="datainsert"></table>
+        <div class="table-container">
+            <!----<div class="d-flex justity-content-center"">-->
+                <div>
+                    <table id="datainsert"></table>
+                </div>
+<div class="d-flex justity-content-center"">
+                <div>
+                    <table id="eventsData"></table>
+                </div>
+
+                <div>
+                    <table id="collectionsData"></table>
+                </div>
+
+            </div>
+        </div>
     </div>
 
-    <div>
-        <table id="eventsData"></table>
-    </div>
-    <div>
-        <table id="collectionsData"></table>
-    </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="assets/javascript/app.js"></script>
