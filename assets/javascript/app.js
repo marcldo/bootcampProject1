@@ -1,4 +1,5 @@
 $("#submit").on("click", function () {
+  $("#error").html("");
   let cityName = $("#cities")
     .val()
     .trim();
@@ -10,6 +11,19 @@ $("#submit").on("click", function () {
       xhr.setRequestHeader("user-key", "800b518a5824533907d36cfa8844ff50 ");
     }
   }).then(function (response) {
+    if(response.location_suggestions.length === 0)
+    {
+       console.log("inside resp")
+$("#datainsert").text("Sorry No data Found");
+$("#cities").val("");
+$("#eventsData").html("");
+$("#collectionsData").html("");    
+
+    }
+    else{
+      $("#eventsData").html("");
+      $("#collectionsData").html("");    
+      $("#cities").val("");
     var op = "<table>";
     console.log(response);
     op += "<tr><th > CITY </th></tr>";
@@ -26,14 +40,15 @@ $("#submit").on("click", function () {
     op += "</table>";
     document.getElementById("datainsert").innerHTML = op;
 
-  });
+    }  });
 });
 
 
 $("#datainsert").on("click", ".location", function (e) {
   console.log("hey, location got clicked", $(this).data("name"));
   // console.log("hey, location got clicked", $(this).data("id"));
-
+ 
+ 
 
   var tableCity = $(this).data("name");
   console.log(tableCity);
@@ -52,6 +67,20 @@ $("#datainsert").on("click", ".location", function (e) {
     method: "GET"
   }).then(function (response) {
     console.log(response);
+
+    if(response.page.totalElements === 0){
+      $("#error").text(`Sorry No data !! Hahaha`);
+          }
+        else{
+          displayselecteddata(response);
+          
+          $(".modal").modal("hide");
+         
+   
+        console.log(response);
+          
+        
+
     ("<tr><th> CITY</th></tr>");
     var eventsTable = "<table>";
     eventsTable += "<tr><th> EVENTS </th></tr>";
@@ -66,7 +95,7 @@ $("#datainsert").on("click", ".location", function (e) {
     }
     eventsTable += "</table>";
     document.getElementById("eventsData").innerHTML = eventsTable;
-  });
+   } });
 
   var zQueryURL = "https://developers.zomato.com/api/v2.1/collections?city_id=" + $(this).data("city-id");
 
@@ -93,3 +122,19 @@ $("#datainsert").on("click", ".location", function (e) {
   });
 });
 
+function displayselecteddata(response)
+{
+  var eventsTable = "<table>";
+  eventsTable += "<tr><th> EVENTS </th></tr>";
+  for (var i = 0; i < 10; i++) {
+    var result = response._embedded.events[i];
+
+    eventsTable += `<tr><td><a href=${result.url} target= "_blank"><img src=${result.images[0].url} align="left" width="300" height="200"> ${result.name
+      }</a> <br><br> ${result._embedded.venues[0].name} <br><br> ${
+      result.dates.start.localDate
+      }</td></tr>`;
+    console.log(result.url);
+  }
+  eventsTable += "</table>";
+  document.getElementById("eventsData").innerHTML = eventsTable;
+}
