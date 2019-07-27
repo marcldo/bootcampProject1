@@ -9,10 +9,16 @@ body {
 /*  Map marker */
 .input-container input[type=text] {
   padding-left:40px;
-  font-size: 20px;
+  font-size: 30px;
   border: 1px solid grey;
-  width: 20%;
+  width: 50%;
   background: #f1f1f1;
+  font-family:  Helvetica, Arial, sans-serif ;
+}
+.input-container i {
+  margin-left: 7px;
+  padding-top: 7px;
+  font-size: 20px;
 }
 
 .input-container {
@@ -20,12 +26,46 @@ body {
   padding: 20px;
 }
 
+.jumbotron{
+  height: 750px;
+  background-image: url(../images/penguinImg.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  /* background: #A1FFCE;  
+background: -webkit-linear-gradient(to right, #FAFFD1, #A1FFCE); 
+background: linear-gradient(to right, #FAFFD1, #A1FFCE);  */
+
+}
+
+.mainHeading{
+  font-size: 80px;
+  font-family:  Helvetica, Arial, sans-serif ;
+  font-weight:  bold;
+  color: rgb(47, 52, 58);
+  padding: 50px;
+}
+
+.btn{
+  width: 100px;
+  font-family:  Helvetica, Arial, sans-serif ;
+  font-size: 20px;
+  display: block;
+  margin: 40px auto;
+}
+
+#cities{
+  width: 500px;
+  height: 40px;
+  border-radius: 50px;
+  background-color: white;
+}
+
 #mapMarker {
   position: absolute;
   left: 3;
   top: 24px;
   padding-left: 10px;
-  
+  color: rgb(47, 52, 58);
 }
 
 /* Location and Date Font Size*/
