@@ -17,32 +17,37 @@
 </head>
 
 <!--Header-->
-<area>
-<div class="container-fluid">
-    <div class="jumbotron">
-        <h1 class="text-center mainHeading"> Things2Do </h1>
-        <div class="input-container text-center">
-            <i class="fa fa-map-marker-alt" id="mapMarker"></i>
-            <input type="text" id="cities" placeholder="City" name="search">
 
-            <div class="row text-center">
-                <div class="col-12">
-                    <button type="button" id="submit" class="btn btn-light text-center" data-toggle="modal"
-                        data-target="#citesModal">Search</button>
+<body>
+
+
+    <area>
+    <div class="container-fluid">
+        <header></header>
+        <div class="jumbotron">
+            <h1 class="text-center mainHeading"> Things2Do </h1>
+            <div class="input-container text-center">
+                <i class="fa fa-map-marker-alt" id="mapMarker"></i>
+                <input type="text" id="cities" placeholder="City" name="search">
+
+                <div class="row text-center">
+                    <div class="col-12">
+                        <button type="button" id="submit" class="btn text-center" data-toggle="modal"
+                            data-target="#citesModal">Search</button>
+                    </div>
                 </div>
+
+
             </div>
 
-
         </div>
-
     </div>
-</div>
 
-<div class="input-container">
+    <div class="input-container">
 
-    <div class="col-md-12 text-center">
+        <div class="col-md-12 text-center">
 
-        <!-- <div class="inputInfo">
+            <!-- <div class="inputInfo">
             <div class="date">
                 <label for="start">Start Date:</label>
                 <input type="date" id="start" name="trip-start" value="yyyy-mm-dd" min="2019-01-01" max="2050-12-31">
@@ -52,45 +57,48 @@
             </div>
         </div>  -->
 
-        <!--Cities Name Search Modal-->
+            <!--Cities Name Search Modal-->
 
-        <div class="modal fade" id="citesModal" role="dialog" aria-labelledby="citesModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-sm">
-                <div class="modal-content">
-                    <div id="datainsert">
+            <div class="modal fade" id="citesModal" role="dialog" aria-labelledby="citesModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Cities</h5>
+                        </div>
+                        <div id="datainsert">
 
-                    </div>
-                    <p id="error"> 
+                        </div>
+                        <p id="error">
                         </p>
-                </div>
-            </div>
-
-        </div>
-
-
-
-        <!--Cities Name Search-->
-
-        <div class="table-container">
-            <!----<div class="d-flex justity-content-center"">-->
-            <div class="d-flex justity-content-center">
-                <div>
-                    <table id="eventsData">
-                    </table>
-                </div>
-
-                <div>
-                    <table id="collectionsData"></table>
+                    </div>
                 </div>
 
             </div>
-        </div>
-    </div>
 
-    <!-- all js here -->
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="assets/javascript/app.js"></script>
-    </body>
+
+
+            <!--Cities Name Search-->
+
+            <div class="table-container">
+                <!----<div class="d-flex justity-content-center"">-->
+                <div class="d-flex justity-content-center">
+                    <div>
+                        <table id="eventsData">
+                        </table>
+                    </div>
+
+                    <div>
+                        <table id="collectionsData"></table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- all js here -->
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="assets/javascript/app.js"></script>
+</body>
 
 </html>

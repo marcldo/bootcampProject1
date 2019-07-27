@@ -26,11 +26,21 @@ body {
   padding: 20px;
 }
 
+header{
+  background-color:#196e97;
+  height: 50px;
+  border-radius: 2px;
+  z-index: 2;
+}
+
 .jumbotron{
-  height: 750px;
+  margin-top: 5px;
+  height: 675px;
   background-image: url(../images/penguinImg.jpg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
+  box-shadow: 5px 8px 5px -5px #414141;
+  z-index: 1;
   /* background: #A1FFCE;  
 background: -webkit-linear-gradient(to right, #FAFFD1, #A1FFCE); 
 background: linear-gradient(to right, #FAFFD1, #A1FFCE);  */
@@ -41,16 +51,28 @@ background: linear-gradient(to right, #FAFFD1, #A1FFCE);  */
   font-size: 80px;
   font-family:  Helvetica, Arial, sans-serif ;
   font-weight:  bold;
-  color: rgb(47, 52, 58);
+  color: rgb(47, 52, 58); 
   padding: 50px;
+  text-shadow: 10px 5px 10px #414141;
+  
+}
+
+.jumbotron input{
+  box-shadow: 5px 8px 5px -5px #414141;
 }
 
 .btn{
-  width: 100px;
+  width: 150px;
+  height: 50px;
   font-family:  Helvetica, Arial, sans-serif ;
   font-size: 20px;
   display: block;
   margin: 40px auto;
+  border: 1px solid #cccccc;
+  border-radius:50px;
+  background-color: #196e97;
+  color: #cccccc;
+  box-shadow: 5px 8px 5px -5px #414141;
 }
 
 #cities{
@@ -77,37 +99,44 @@ background: linear-gradient(to right, #FAFFD1, #A1FFCE);  */
 padding: 20px;
 }
 
+.citiesSearchResult{
+  padding: 10px;
+  margin: 0 auto;
+}
+
+.citiesSearchResult td{
+padding: 10px;
+}
+
 
 /* City Table */
 
-table#datainsert {
-  /*margin-left: 32%;
-  margin-top: 2%;*/
+/* table#datainsert {
+
   margin:auto;
   border-spacing: 10px 10px;
-  /*border: 2px solid black;*/
+
   height: auto;
   width: 300px;
   font-size: 20px;
-}
-tr:nth-child(1) {
-  background-color: cornsilk;
-}
+} */
+
+
 /* Header Height*/
-table, th, td {
+/* table, th, td {
   height: 60px;
-}
+} */
 
 /* Header Text */
-table, th {
+/* table, th {
 text-align: center;
-}
+} */
 
 /* Click link and Info */
-table, td {
+/* table, td {
 text-align: right ;
 
-}
+} */
 
 /* Table Font Size */
 #eventsData {
