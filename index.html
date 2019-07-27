@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Things To Do</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- all css here -->
     <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
 
 </head>
 
@@ -25,7 +27,8 @@
 
             <div class="row text-center">
                 <div class="col-12">
-                    <button type="button" id="submit" class="btn btn-light text-center">Search</button>
+                    <button type="button" id="submit" class="btn btn-light text-center" data-toggle="modal"
+                        data-target="#citesModal">Search</button>
                 </div>
             </div>
 
@@ -49,17 +52,28 @@
             </div>
         </div>  -->
 
+        <!--Cities Name Search Modal-->
+
+        <div class="modal fade" id="citesModal" role="dialog" aria-labelledby="citesModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div id="datainsert">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
 
         <!--Cities Name Search-->
 
         <div class="table-container">
             <!----<div class="d-flex justity-content-center"">-->
-            <div>
-                <table id="datainsert"></table>
-            </div>
             <div class="d-flex justity-content-center">
                 <div>
-                    <table id=" eventsData">
+                    <table id="eventsData">
                     </table>
                 </div>
 
@@ -71,8 +85,9 @@
         </div>
     </div>
 
-
+    <!-- all js here -->
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="assets/javascript/app.js"></script>
     </body>
 
