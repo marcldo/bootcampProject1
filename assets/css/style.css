@@ -8,12 +8,15 @@ body {
 
 /*  Map marker */
 .input-container input[type=text] {
+  padding-top: 10px;
   padding-left:40px;
+
   font-size: 30px;
   border: 1px solid grey;
   width: 50%;
   background: #f1f1f1;
-  font-family:  Helvetica, Arial, sans-serif ;
+  font-family: 'Josefin Sans', sans-serif;
+  
 }
 .input-container i {
   margin-left: 7px;
@@ -41,20 +44,16 @@ header{
   background-size: 100% 100%;
   box-shadow: 5px 8px 5px -5px #414141;
   z-index: 1;
-  /* background: #A1FFCE;  
-background: -webkit-linear-gradient(to right, #FAFFD1, #A1FFCE); 
-background: linear-gradient(to right, #FAFFD1, #A1FFCE);  */
-
 }
 
 .mainHeading{
-  font-size: 80px;
-  font-family:  Helvetica, Arial, sans-serif ;
+  font-size: 100px;
+  font-family: 'Josefin Sans', sans-serif;
   font-weight:  bold;
-  color: rgb(47, 52, 58); 
-  padding: 50px;
+  color: rgb(235, 235, 235); 
+  padding: 30px;
+  padding-bottom: 5px;
   text-shadow: 10px 5px 10px #414141;
-  
 }
 
 .jumbotron input{
@@ -64,8 +63,8 @@ background: linear-gradient(to right, #FAFFD1, #A1FFCE);  */
 .btn{
   width: 150px;
   height: 50px;
-  font-family:  Helvetica, Arial, sans-serif ;
-  font-size: 20px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 25px;
   display: block;
   margin: 40px auto;
   border: 1px solid #cccccc;

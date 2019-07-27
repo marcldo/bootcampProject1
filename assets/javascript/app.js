@@ -48,7 +48,6 @@ $("#datainsert").on("click", ".location", function (e) {
   // console.log("hey, location got clicked", $(this).data("id"));
 
 
-
   var tableCity = $(this).data("name");
   console.log(tableCity);
   var city = tableCity.substring(0, tableCity.indexOf(","));
