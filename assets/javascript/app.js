@@ -1,3 +1,6 @@
+var checkEvent;
+var checkCollection;
+
 $("#submit").on("click", function () {
   $("#error").html("");
   let cityName = $("#cities")
@@ -65,9 +68,18 @@ $("#datainsert").on("click", ".location", function (e) {
     method: "GET"
   }).then(function (response) {
     console.log(response);
+    checkEvent = response.page.totalElements;
 
-    if (response.page.totalElements === 0) {
+    if (checkEvent === 0 && checkCollection === false) {
       $("#error").text(`Sorry No data !! Hahaha`);
+    }
+
+    else if (includesCityorState(response) === false) {
+      var noEventTable = $("<table>");
+      noEventTable = `<tr><th> EVENTS </th></tr> <tr><td>No events at this location</td></tr>`;
+      $("#eventsData").append(noEventTable);
+      $(".modal").modal("hide");
+
     }
     else {
       displayselecteddata(response);
@@ -79,20 +91,20 @@ $("#datainsert").on("click", ".location", function (e) {
 
 
 
-      ("<tr><th> CITY</th></tr>");
-      var eventsTable = "<table>";
-      eventsTable += "<tr><th> EVENTS </th></tr>";
-      for (var i = 0; i < 10; i++) {
-        var result = response._embedded.events[i];
+      // ("<tr><th> CITY</th></tr>");
+      // var eventsTable = "<table>";
+      // eventsTable += "<tr><th> EVENTS </th></tr>";
+      // for (var i = 0; i < 10; i++) {
+      //   var result = response._embedded.events[i];
 
-        eventsTable += `<tr><td><a href=${result.url} target= "_blank"><img src=${result.images[0].url} align="left" width="300" height="200"> ${result.name
-          }</a> <br><br> ${result._embedded.venues[0].name} <br><br> ${
-          result.dates.start.localDate
-          }</td></tr>`;
-        console.log(result.url);
-      }
-      eventsTable += "</table>";
-      document.getElementById("eventsData").innerHTML = eventsTable;
+      //   eventsTable += `<tr><td><a href=${result.url} target= "_blank"><img src=${result.images[0].url} align="left" width="300" height="200"> ${result.name
+      //     }</a> <br><br> ${result._embedded.venues[0].name} <br><br> ${
+      //     result.dates.start.localDate
+      //     }</td></tr>`;
+      //   console.log(result.url);
+      // }
+      // eventsTable += "</table>";
+      // document.getElementById("eventsData").innerHTML = eventsTable;
     }
   });
 
@@ -105,8 +117,18 @@ $("#datainsert").on("click", ".location", function (e) {
       xhr.setRequestHeader("user-key", "800b518a5824533907d36cfa8844ff50 ");
     }
   }).then(function (response) {
+    // checking if collections property exists in JSON response
+    
+    if (response.collections) {
+      checkCollection = true;
+    }
+    else {
+      checkCollection = false;
+    }
+  
     console.log(response);
     console.log(response.collections[0]);
+
     var collectionsTable = `<thead>
     <tr>
         <th>  
@@ -114,16 +136,18 @@ $("#datainsert").on("click", ".location", function (e) {
         </th>
     </tr>
     </thead>`
-    collectionsTable += "<tbody>";
-    for (var i = 0; i < 10; i++) {
-      var result = response.collections[i].collection;
-      collectionsTable += `<tr><td><a href=${result.share_url} target = "_blank"><img src=${result.image_url} align="left" width="300" height="200">${
-        result.description
-        }</a></td></tr>`;
+      collectionsTable += "<tbody>";
+      for (var i = 0; i < 10; i++) {
+        var result = response.collections[i].collection;
+        collectionsTable += `<tr><td><a href=${result.share_url} target = "_blank"><img src=${result.image_url} align="left" width="300" height="200">${
+          result.description
+          }</a></td></tr>`;
 
-    }
-    collectionsTable += "</tbody>";
-    document.getElementById("collectionsData").innerHTML = collectionsTable;
+      }
+      collectionsTable += "</tbody>";
+      document.getElementById("collectionsData").innerHTML = collectionsTable;
+
+
   });
 });
 
@@ -142,3 +166,16 @@ function displayselecteddata(response) {
   eventsTable += "</table>";
   document.getElementById("eventsData").innerHTML = eventsTable;
 }
+
+function includesCityorState(response) {
+  if (response._links.self.href.includes("city")){
+    return true;
+  }
+  else if (response._links.self.href.includes("state")){
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
