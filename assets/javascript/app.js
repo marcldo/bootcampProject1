@@ -39,6 +39,7 @@ $("#submit").on("click", function() {
 //Action to be performed onclick of modal data insert
 $("#datainsert").on("click", ".location", function(e) {
   // gets cityname,state,city onclick of any row
+
   var tableCity = $(this).data("name");
   console.log(tableCity);
   var city = tableCity.substring(0, tableCity.indexOf(","));
