@@ -40,6 +40,7 @@ header{
   position: absolute;
   left: 3;
   top: 5px;
+  top: 24px;
   padding-left: 10px;
   color: rgb(47, 52, 58);
 }
@@ -100,6 +101,16 @@ header{
 }
 
 
+#mapMarker {
+  position: absolute;
+  font-size: 20px;
+  left: 3;
+  top: 10px;
+  padding-left: 15px;
+  color: rgb(47, 52, 58);
+}
+
+
 /* Location and Date Font Size*/
 /*.inputInfo {
   font-size: 20px;
@@ -136,7 +147,6 @@ table th {
 }
 
 .table-container td.description{
- /*display: flex;*/
   padding: 10px;
 }
 
