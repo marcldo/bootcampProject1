@@ -107,16 +107,22 @@ $("#datainsert").on("click", ".location", function (e) {
   }).then(function (response) {
     console.log(response);
     console.log(response.collections[0]);
-    var collectionsTable = "<table>";
-    collectionsTable += "<tr><th> RESTAURANTS </th></tr>";
+    var collectionsTable = `<thead>
+    <tr>
+        <th>  
+          Restaurants
+        </th>
+    </tr>
+    </thead>`
+    collectionsTable += "<tbody>";
     for (var i = 0; i < 10; i++) {
       var result = response.collections[i].collection;
-      collectionsTable += `<tr><td><a href=${result.url} target = "_blank"><img src=${result.image_url} align="left" width="300" height="200">${
+      collectionsTable += `<tr><td><a href=${result.share_url} target = "_blank"><img src=${result.image_url} align="left" width="300" height="200">${
         result.description
         }</a></td></tr>`;
 
     }
-    collectionsTable += "</table>";
+    collectionsTable += "</tbody>";
     document.getElementById("collectionsData").innerHTML = collectionsTable;
   });
 });

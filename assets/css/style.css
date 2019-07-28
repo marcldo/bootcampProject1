@@ -27,7 +27,14 @@ body {
 
 .input-container {
   position: relative;
-  padding: 20px;
+  /* padding: px; */
+}
+
+header{
+  background-color:#196e97;
+  height: 50px;
+  border-radius: 2px;
+  z-index: 2;
 }
 
 header{
@@ -87,9 +94,10 @@ header{
 
 #mapMarker {
   position: absolute;
+  font-size: 20px;
   left: 3;
-  top: 24px;
-  padding-left: 10px;
+  top: 10px;
+  padding-left: 15px;
   color: rgb(47, 52, 58);
 }
 
