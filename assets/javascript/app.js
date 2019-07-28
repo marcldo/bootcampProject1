@@ -122,7 +122,7 @@ $("#datainsert").on("click", ".location", function (e) {
     collectionsTable += "<tbody>";
     for (var i = 0; i < 10; i++) {
       var result = response.collections[i].collection;
-      collectionsTable += `<tr><td><a href=${result.url} target = "_blank"><img src=${result.image_url} align="left" width="300" height="200">${
+      collectionsTable += `<tr><td><a href=${result.share_url} target = "_blank"><img src=${result.image_url} align="left" width="300" height="200">${
         result.description
         }</a></td></tr>`;
 
