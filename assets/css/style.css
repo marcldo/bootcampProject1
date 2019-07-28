@@ -18,16 +18,10 @@ body {
   font-family: 'Josefin Sans', sans-serif;
   
 }
-.input-container i {
-  margin-left: 7px;
-  padding-top: 7px;
-  font-size: 20px;
- 
-}
 
 .input-container {
   position: relative;
-  padding: 20px;
+  /* padding: px; */
 }
 
 header{
@@ -87,9 +81,10 @@ header{
 
 #mapMarker {
   position: absolute;
+  font-size: 20px;
   left: 3;
-  top: 24px;
-  padding-left: 10px;
+  top: 10px;
+  padding-left: 15px;
   color: rgb(47, 52, 58);
 }
 
@@ -147,8 +142,8 @@ text-align: right ;
 }
 
 footer{
-  height:200px;
-  background-color: #8BD1EB;
+  height:100px;
+  background-color: #196e97;
   border-radius: 2px;
-  margin-top:5px;
+  margin-top:10px;
 }
