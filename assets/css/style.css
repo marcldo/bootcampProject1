@@ -18,10 +18,23 @@ body {
   font-family: 'Josefin Sans', sans-serif;
   
 }
+.input-container i {
+  margin-left: 7px;
+  padding-top: 7px;
+  font-size: 20px;
+ 
+}
 
 .input-container {
   position: relative;
   /* padding: px; */
+}
+
+header{
+  background-color:#196e97;
+  height: 50px;
+  border-radius: 2px;
+  z-index: 2;
 }
 
 header{
@@ -68,7 +81,7 @@ header{
   border: 1px solid #cccccc;
   border-radius:50px;
   background-color: #196e97;
-  color: #ffffff; 
+  color: #cccccc;
   box-shadow: 5px 8px 5px -5px #414141;
 }
 
@@ -142,8 +155,8 @@ text-align: right ;
 }
 
 footer{
-  height:150px;
-  background-color: #196e97;
+  height:200px;
+  background-color: #8BD1EB;
   border-radius: 2px;
-  margin-top:10px;
+  margin-top:5px;
 }
