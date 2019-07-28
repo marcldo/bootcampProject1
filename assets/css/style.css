@@ -68,7 +68,7 @@ header{
   border: 1px solid #cccccc;
   border-radius:50px;
   background-color: #196e97;
-  color: #cccccc;
+  color: #ffffff; 
   box-shadow: 5px 8px 5px -5px #414141;
 }
 
@@ -142,7 +142,7 @@ text-align: right ;
 }
 
 footer{
-  height:100px;
+  height:150px;
   background-color: #196e97;
   border-radius: 2px;
   margin-top:10px;
