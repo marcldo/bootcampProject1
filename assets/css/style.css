@@ -10,7 +10,6 @@ body {
 .input-container input[type=text] {
   padding-top: 10px;
   padding-left:40px;
-
   font-size: 30px;
   border: 1px solid grey;
   width: 50%;
@@ -34,6 +33,14 @@ header{
   height: 50px;
   border-radius: 2px;
   z-index: 2;
+}
+
+#mapMarker {
+  position: absolute;
+  left: 3;
+  top: 24px;
+  padding-left: 10px;
+  color: rgb(47, 52, 58);
 }
 
 header{
@@ -100,13 +107,14 @@ header{
 }
 
 /* Location and Date Font Size*/
-.inputInfo {
+/*.inputInfo {
   font-size: 20px;
 }
 
 .date {
 padding: 20px;
-}
+}*/
+
 
 
 
@@ -133,6 +141,21 @@ font-family: 'Josefin Sans', sans-serif;
 .location{
 }
 
+/* Events and Restaurants Tables*/
+table th {
+  font-size: 25px;
+  font-family: 'Josefin Sans', sans-serif;
+  color: white;
+  padding: 10px;
+  font-weight: bolder;
+  background-color: #196e97;
+  text-align: center;
+  /*box-shadow: 5px 8px 5px -5px #414141;*/
+ 
+}
+.table-container a img {
+  padding: 10px;
+}
 
 #datainsert p{
   padding: 10px;
@@ -144,38 +167,22 @@ font-family: 'Josefin Sans', sans-serif;
 
 
 /* City Table */
-
-/* table#datainsert {
-
-  margin:auto;
-  border-spacing: 10px 10px;
-
-  height: auto;
-  width: 300px;
-  font-size: 20px;
-} */
-
-
-/* Header Height*/
-/* table, th, td {
-  height: 60px;
-} */
-
-/* Header Text */
-/* table, th {
-text-align: center;
-} */
-
-/* Click link and Info */
-/* table, td {
-text-align: right ;
-
-} */
-
-/* Table Font Size */
-#eventsData {
-  font-size: 20px
+.table-container td.description{
+ display: flex;
+  padding: 10px;
 }
+
+/*.d-flex justity-content-md-center{
+width: 100px;
+
+}*/
+
+table td {
+  font-size: 20px;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+
 
 footer{
   height:200px;
