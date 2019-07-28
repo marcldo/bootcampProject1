@@ -13,7 +13,7 @@ $("#submit").on("click", function () {
   }).then(function (response) {
     if (response.location_suggestions.length === 0) {
       console.log("inside resp")
-      $("#datainsert").text("Sorry No data Found");
+      $("#datainsert").text("Sorry No Cities Found");
       $("#cities").val("");
       $("#eventsData").html("");
       $("#collectionsData").html("");
@@ -78,10 +78,15 @@ $("#datainsert").on("click", ".location", function (e) {
       console.log(response);
 
 
+      var eventsTable = `<thead>
+      <tr>
+          <th>
+              Events
+          </th>
+      </tr>
+      </thead>`
 
-      ("<tr><th> CITY</th></tr>");
-      var eventsTable = "<table>";
-      eventsTable += "<tr><th> EVENTS </th></tr>";
+      eventsTable += "<tbody>";
       for (var i = 0; i < 10; i++) {
         var result = response._embedded.events[i];
 
@@ -91,7 +96,7 @@ $("#datainsert").on("click", ".location", function (e) {
           }</td></tr>`;
         console.log(result.url);
       }
-      eventsTable += "</table>";
+      eventsTable += "</tbody>";
       document.getElementById("eventsData").innerHTML = eventsTable;
     }
   });
