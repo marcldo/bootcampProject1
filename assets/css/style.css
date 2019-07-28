@@ -26,7 +26,14 @@ body {
 
 .input-container {
   position: relative;
-  padding: 20px;
+  /* padding: px; */
+}
+
+header{
+  background-color:#196e97;
+  height: 50px;
+  border-radius: 2px;
+  z-index: 2;
 }
 
 #mapMarker {
@@ -92,6 +99,17 @@ header{
   background-color: white;
 }
 
+<<<<<<< HEAD
+=======
+#mapMarker {
+  position: absolute;
+  font-size: 20px;
+  left: 3;
+  top: 10px;
+  padding-left: 15px;
+  color: rgb(47, 52, 58);
+}
+>>>>>>> master
 
 /* Location and Date Font Size*/
 /*.inputInfo {
