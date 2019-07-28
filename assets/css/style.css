@@ -27,7 +27,6 @@ body {
 
 .input-container {
   position: relative;
-  /* padding: px; */
 }
 
 header{
@@ -45,7 +44,6 @@ header{
 }
 
 .jumbotron{
-  margin-top: 5px;
   height: 500px;
   background-image: url(../images/penguinImg.jpg);
   background-repeat: no-repeat;
@@ -110,6 +108,13 @@ header{
 padding: 20px;
 }
 
+
+
+/* modal styling */
+.modal-title{
+  font-family: 'Josefin Sans', sans-serif;
+}
+
 .citiesSearchResult{
   padding: 10px;
   margin: 0 auto;
@@ -117,7 +122,25 @@ padding: 20px;
 
 .citiesSearchResult td{
 padding: 10px;
+font-family: 'Josefin Sans', sans-serif;
 }
+
+.citiesSearchResult td img{
+  width: 30px;
+  height: auto;
+}
+
+.location{
+}
+
+
+#datainsert p{
+  padding: 10px;
+  margin: 0 auto;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+
 
 
 /* City Table */
@@ -156,7 +179,6 @@ text-align: right ;
 
 footer{
   height:200px;
-  background-color: #8BD1EB;
+  background-color: #196e97;
   border-radius: 2px;
-  margin-top:5px;
 }

@@ -13,7 +13,7 @@ $("#submit").on("click", function () {
   }).then(function (response) {
     if (response.location_suggestions.length === 0) {
       console.log("inside resp")
-      $("#datainsert").text("Sorry No data Found");
+      $("#datainsert").html("<p>Sorry No Cities Found</p>");
       $("#cities").val("");
       $("#eventsData").html("");
       $("#collectionsData").html("");
@@ -32,7 +32,7 @@ $("#submit").on("click", function () {
         console.log(result);
         op += `<tr> <td class="location" data-name="${result.name}" data-id="${result.country_id}" data-state="${result.state_code}" 
         data-city-id="${result.id}">  
-       <img src="${result.country_flag_url}" align="left"></img>&nbsp; &nbsp;&nbsp; &nbsp; ${result.name} </td>`;
+       <img src="${result.country_flag_url}" align="left"></img><p> ${result.name}<p> </td>`;
       }
 
       op += "</table>";
@@ -67,7 +67,7 @@ $("#datainsert").on("click", ".location", function (e) {
     console.log(response);
 
     if (response.page.totalElements === 0) {
-      $("#error").text(`Sorry No data !! Hahaha`);
+      $("#error").html(`<p>Sorry No Events or Restaurants</p>`);
     }
     else {
       displayselecteddata(response);
