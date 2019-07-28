@@ -39,6 +39,7 @@ header{
 #mapMarker {
   position: absolute;
   left: 3;
+  top: 5px;
   top: 24px;
   padding-left: 10px;
   color: rgb(47, 52, 58);
@@ -99,8 +100,7 @@ header{
   background-color: white;
 }
 
-<<<<<<< HEAD
-=======
+
 #mapMarker {
   position: absolute;
   font-size: 20px;
@@ -109,7 +109,7 @@ header{
   padding-left: 15px;
   color: rgb(47, 52, 58);
 }
->>>>>>> master
+
 
 /* Location and Date Font Size*/
 /*.inputInfo {
@@ -147,20 +147,13 @@ table th {
 }
 
 .table-container td.description{
- display: flex;
   padding: 10px;
 }
-
-/*.d-flex justity-content-md-center{
-width: 100px;
-
-}*/
 
 table td {
   font-size: 20px;
   font-family: 'Josefin Sans', sans-serif;
 }
-
 
 
 footer{

@@ -81,11 +81,11 @@ $("#datainsert").on("click", ".location", function (e) {
 
       ("<tr><th> CITY</th></tr>");
       var eventsTable = "<table>";
-      eventsTable += "<tr><th> EVENTS </th></tr>";
+      eventsTable += "<tr><th> Events </th></tr>";
       for (var i = 0; i < 10; i++) {
         var result = response._embedded.events[i];
 
-        eventsTable += `<tr><td><a href=${result.url} target= "_blank"><img src=${result.images[0].url} align="left" width="300" height="200"> ${result.name
+        eventsTable += `<tr><td><br><a href=${result.url} target= "_blank"><img src=${result.images[0].url} align="left" width="300" height="200">${result.name
           }</a> <br><br> ${result._embedded.venues[0].name} <br><br> ${
           result.dates.start.localDate
           }</td></tr>`;
