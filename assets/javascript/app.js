@@ -20,7 +20,7 @@ $("#submit").on("click", function () {
     }
   }).then(function (response) {
     if (response.location_suggestions.length === 0) {
-      $("#datainsert").text("Sorry No data Found");
+      $("#datainsert").html(`<p>Sorry No Cities Found</p>`);
       // Calling cleardata function to clear all inputs
       cleardata();
     } else {
@@ -85,7 +85,7 @@ $("#datainsert").on("click", ".location", function (e) {
       populatezomatodata(response);
     });
   } else {
-    $("#error").text("City / State not defined in API");
+    $("#error").text("No Info For Selected City");
   }
 });
 

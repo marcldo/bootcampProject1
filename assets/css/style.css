@@ -140,6 +140,17 @@ padding: 20px;
   margin: 0 auto;
 }
 
+#datainsert{
+  padding-top:10px;
+}
+
+#datainsert p{
+  padding-top:10px;
+  font-size: 15px;
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: center;
+}
+
 .citiesSearchResult{
   padding: 10px;
   margin: 0 auto;
