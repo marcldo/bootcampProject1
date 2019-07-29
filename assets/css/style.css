@@ -119,6 +119,21 @@ header{
 padding: 20px;
 }*/
 
+.modal-title{
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 20px;
+}
+
+.modalTable{
+  padding-top: 5px;
+  margin:0 auto;
+}
+
+.modalTable img{
+  height: 25px;
+}
+
+
 
 .citiesSearchResult{
   padding: 10px;
@@ -127,6 +142,7 @@ padding: 20px;
 
 .citiesSearchResult td{
 padding: 10px;
+margin: 0 auto;
 }
 
 /* Events and Restaurants Tables*/
@@ -138,9 +154,8 @@ table th {
   font-weight: bolder;
   background-color: #196e97;
   text-align: center;
-  /*box-shadow: 5px 8px 5px -5px #414141;*/
- 
 }
+
 .table-container a img {
   padding: 10px;
 }

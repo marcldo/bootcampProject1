@@ -27,7 +27,7 @@ $("#submit").on("click", function () {
       // Calling cleardata function to clear all inputs
       cleardata();
 
-      var op = "<table>";
+      var op = `<table class= "modalTable">`;
 
       //populate the modal with the cities
       populatedatainsertmodal(op, response);
@@ -100,7 +100,7 @@ function populatedatainsertmodal(op, response) {
     data-city-id="${result.id}">  
    <img src="${
       result.country_flag_url
-      }" align="left"></img>&nbsp; &nbsp;&nbsp; &nbsp;<span> ${result.name}<span> </td>`;
+      }" align="left"></img>&nbsp; &nbsp;<span> ${result.name}<span> </td>`;
   }
 
   op += "</table>";
