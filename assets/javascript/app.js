@@ -2,7 +2,7 @@
 $("#error").html("");
 
 // Actions to be performed onclick of search button
-$("#submit").on("click", function() {
+$("#submit").on("click", function () {
   $("#error").html("");
   let cityName = $("#cities")
     .val()
@@ -15,10 +15,10 @@ $("#submit").on("click", function() {
   $.ajax({
     url: queryURL,
     method: "GET",
-    beforeSend: function(xhr) {
+    beforeSend: function (xhr) {
       xhr.setRequestHeader("user-key", "800b518a5824533907d36cfa8844ff50 ");
     }
-  }).then(function(response) {
+  }).then(function (response) {
     if (response.location_suggestions.length === 0) {
       $("#datainsert").text("Sorry No data Found");
       // Calling cleardata function to clear all inputs
@@ -37,7 +37,7 @@ $("#submit").on("click", function() {
 });
 
 //Action to be performed onclick of modal data insert
-$("#datainsert").on("click", ".location", function(e) {
+$("#datainsert").on("click", ".location", function (e) {
   // gets cityname,state,city onclick of any row
 
   var tableCity = $(this).data("name");
@@ -59,7 +59,7 @@ $("#datainsert").on("click", ".location", function(e) {
     $.ajax({
       url: tQueryURL,
       method: "GET"
-    }).then(function(response) {
+    }).then(function (response) {
       if (response.page.totalElements === 0) {
         $("#error").text(`Sorry No data found!!`);
       } else {
@@ -78,10 +78,10 @@ $("#datainsert").on("click", ".location", function(e) {
     $.ajax({
       url: zQueryURL,
       method: "GET",
-      beforeSend: function(xhr) {
+      beforeSend: function (xhr) {
         xhr.setRequestHeader("user-key", "800b518a5824533907d36cfa8844ff50");
       }
-    }).then(function(response) {
+    }).then(function (response) {
       //call zomatodata function to populate the div with zomato data
       populatezomatodata(response);
     });
@@ -97,11 +97,11 @@ function populatedatainsertmodal(op, response) {
     console.log(result);
     op += `<tr> <td class="location" data-name="${result.name}" data-id="${
       result.country_id
-    }" data-state="${result.state_code}" 
+      }" data-state="${result.state_code}" 
     data-city-id="${result.id}">  
    <img src="${
-     result.country_flag_url
-   }" align="left"></img>&nbsp; &nbsp;&nbsp; &nbsp; ${result.name} </td>`;
+      result.country_flag_url
+      }" align="left"></img>&nbsp; &nbsp;&nbsp; &nbsp; ${result.name} </td>`;
   }
 
   op += "</table>";
@@ -110,17 +110,18 @@ function populatedatainsertmodal(op, response) {
 
 //populating zomato data
 function populatezomatodata(response) {
+  console.log(response)
   var collectionsTable = "<table>";
   collectionsTable += "<tr><th> RESTAURANTS </th></tr>";
   for (var i = 0; i < 10; i++) {
     var result = response.collections[i].collection;
     collectionsTable += `<tr><td><a href=${
-      result.url
-    } target = "_blank"><img src=${
+      result.share_url
+      } target = "_blank"><img src=${
       result.image_url
-    } align="left" width="300" height="200">${
+      } align="left" width="300" height="200">${
       result.description
-    }</a></td></tr>`;
+      }</a></td></tr>`;
   }
   collectionsTable += "</table>";
   document.getElementById("collectionsData").innerHTML = collectionsTable;
@@ -135,9 +136,9 @@ function displayeventdata(response) {
 
     eventsTable += `<tr><td><a href=${result.url} target= "_blank"><img src=${
       result.images[0].url
-    } align="left" width="300" height="200"> ${result.name}</a> <br><br> ${
+      } align="left" width="300" height="200"> ${result.name}</a> <br><br> ${
       result._embedded.venues[0].name
-    } <br><br> ${result.dates.start.localDate}</td></tr>`;
+      } <br><br> ${result.dates.start.localDate}</td></tr>`;
   }
   eventsTable += "</table>";
   document.getElementById("eventsData").innerHTML = eventsTable;
