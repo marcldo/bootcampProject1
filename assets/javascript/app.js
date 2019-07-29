@@ -1,3 +1,6 @@
+var checkEvent;
+var checkCollection;
+
 // Clear the error inside the modaldata
 $("#error").html("");
 
@@ -46,7 +49,7 @@ $("#datainsert").on("click", ".location", function (e) {
   var state = $(this).data("state");
   console.log(state);
 
-  if (tableCity != "" && city != "" && state != "") {
+  // if (tableCity != "" && city != "" && state != "") {
     //Zomato queryUrl for API call
     var tQueryURL =
       "https://app.ticketmaster.com/discovery/v2/events?apikey=7elxdku9GGG5k8j0Xm8KWdANDgecHMV0&locale=*&city=" +
@@ -59,9 +62,18 @@ $("#datainsert").on("click", ".location", function (e) {
       url: tQueryURL,
       method: "GET"
     }).then(function (response) {
-      if (response.page.totalElements === 0) {
+      checkEvent = response.page.totalElements;
+      console.log(includesCityorState(response));
+      if (checkEvent === 0 && checkCollection === false) {
         $("#error").text(`Sorry No Restaurants or Events Found`);
-      } else {
+      } 
+      else if (includesCityorState(response) === false){
+        var noEventTable = $("<table>");
+      noEventTable = `<tr><th> EVENTS </th></tr> <tr><td>No events at this location</td></tr>`;
+      $("#eventsData").append(noEventTable);
+      $(".modal").modal("hide");
+      }
+      else {
         //call displayeventdata function to populate the div with event data
         displayeventdata(response);
         $(".modal").modal("hide");
@@ -81,12 +93,22 @@ $("#datainsert").on("click", ".location", function (e) {
         xhr.setRequestHeader("user-key", "800b518a5824533907d36cfa8844ff50");
       }
     }).then(function (response) {
+      // checking if collections property exists in JSON response
+    console.log(response);
+    if (response.collections) {
+      checkCollection = true;
+    }
+    else {
+      checkCollection = false;
+    }
+  
       //call zomatodata function to populate the div with zomato data
       populatezomatodata(response);
     });
-  } else {
-    $("#error").text("No Info For Selected City");
-  }
+  
+  // else {
+  //   $("#error").text("No Info For Selected City");
+  // }
 });
 
 //populate datainsert modal
@@ -152,4 +174,13 @@ function cleardata() {
   $("#eventsData").html("");
   $("#collectionsData").html("");
   $("#cities").val("");
+}
+
+function includesCityorState(response) {
+  if (response._links.self.href.includes("city") || response._links.self.href.includes("state")){
+    return true;
+  }
+  else {
+    return false;
+  }
 }
