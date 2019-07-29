@@ -133,7 +133,10 @@ padding: 20px;
   height: 25px;
 }
 
-
+#error {
+  font-family: 'Josefin Sans', sans-serif;
+  margin:0 auto;
+}
 
 .citiesSearchResult{
   padding: 10px;

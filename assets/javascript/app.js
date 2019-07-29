@@ -60,7 +60,7 @@ $("#datainsert").on("click", ".location", function (e) {
       method: "GET"
     }).then(function (response) {
       if (response.page.totalElements === 0) {
-        $("#error").text(`Sorry No data found!!`);
+        $("#error").text(`Sorry No Restaurants or Events Found`);
       } else {
         //call displayeventdata function to populate the div with event data
         displayeventdata(response);
