@@ -6,6 +6,16 @@ body {
   background: white;
 }
 
+nav{
+  color: rgba(0, 0, 0, 0.445);
+  height: 100%;
+}
+nav a{
+  margin-top: 5px;
+  margin-left: 25px;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
 /*  Map marker */
 .input-container input[type=text] {
   padding-top: 10px;
@@ -32,33 +42,23 @@ body {
 header{
   background-color:#196e97;
   height: 50px;
-  border-radius: 2px;
   z-index: 2;
 }
 
 #mapMarker {
   position: absolute;
   left: 3;
-  top: 5px;
-  top: 24px;
+  top:5px;
   padding-left: 10px;
   color: rgb(47, 52, 58);
 }
 
-header{
-  background-color:#196e97;
-  height: 50px;
-  border-radius: 2px;
-  z-index: 2;
-}
-
 .jumbotron{
-  margin-top: 5px;
   height: 500px;
   background-image: url(../images/penguinImg.jpg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  box-shadow: 5px 8px 5px -5px #414141;
+  border-radius: 0;
   z-index: 1;
   background-size: cover;
   background-position: center center;
@@ -103,12 +103,12 @@ header{
 
 #mapMarker {
   position: absolute;
+  bottom: 15px;
   font-size: 20px;
-  left: 3;
-  top: 10px;
-  padding-left: 15px;
   color: rgb(47, 52, 58);
 }
+
+
 
 
 /* Location and Date Font Size*/
@@ -120,6 +120,37 @@ header{
 padding: 20px;
 }*/
 
+.modal-title{
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 20px;
+}
+
+.modalTable{
+  padding-top: 5px;
+  margin:0 auto;
+}
+
+.modalTable img{
+  height: 25px;
+}
+
+#error {
+  padding-top:10px;
+  font-size: 15px;
+  font-family: 'Josefin Sans', sans-serif;
+  margin: 0 auto;
+}
+
+#datainsert{
+  padding-top:10px;
+}
+
+#datainsert p{
+  padding-top:10px;
+  font-size: 15px;
+  font-family: 'Josefin Sans', sans-serif;
+  text-align: center;
+}
 
 .citiesSearchResult{
   padding: 10px;
@@ -128,9 +159,15 @@ padding: 20px;
 
 .citiesSearchResult td{
 padding: 10px;
+margin: 0 auto;
+}
+
+.location:hover{
+color: #196e97;
 }
 
 /* Events and Restaurants Tables*/
+
 table th {
   font-size: 25px;
   font-family: 'Josefin Sans', sans-serif;
@@ -139,11 +176,26 @@ table th {
   font-weight: bolder;
   background-color: #196e97;
   text-align: center;
-  /*box-shadow: 5px 8px 5px -5px #414141;*/
- 
 }
+
+.tableTitle{
+  font-size: 20px;
+  font-weight: bold;
+  display: inline-block;
+  color:#196e97;
+  width: 50%;
+}
+
+.tableDesc{
+  font-size: 15px;
+  color:black;
+}
+
+
+
 .table-container a img {
   padding: 10px;
+  border-radius:20px;
 }
 
 .table-container td.description{
@@ -158,7 +210,6 @@ table td {
 
 footer{
   height:200px;
-  background-color: #8BD1EB;
-  border-radius: 2px;
-  margin-top:5px;
+  background-color: #196e97;
+
 }
