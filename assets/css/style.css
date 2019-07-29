@@ -167,6 +167,12 @@ color: #196e97;
 }
 
 /* Events and Restaurants Tables*/
+.eventsData{
+width: 100%;
+}
+.collectionsData{
+width: 100%;
+}
 
 table th {
   font-size: 25px;
@@ -179,6 +185,7 @@ table th {
 }
 
 .tableTitle{
+  padding-top: 10px;
   font-size: 20px;
   font-weight: bold;
   display: inline-block;
@@ -186,12 +193,21 @@ table th {
   width: 50%;
 }
 
+.resultContainer:hover{
+color: #196e97;
+box-shadow: 5px 5px 15px #888888;
+border-radius: 15px;
+}
+
+.resultContainer{
+width: 100%;
+}
+
 .tableDesc{
+  padding-top: 10px;
   font-size: 15px;
   color:black;
 }
-
-
 
 .table-container a img {
   padding: 10px;
