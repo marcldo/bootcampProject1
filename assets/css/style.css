@@ -53,12 +53,11 @@ header{
 }
 
 .jumbotron{
-  margin-top: 5px;
   height: 500px;
   background-image: url(../images/penguinImg.jpg);
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  box-shadow: 5px 8px 5px -5px #414141;
+  border-radius: 0;
   z-index: 1;
   background-size: cover;
   background-position: center center;
@@ -158,7 +157,7 @@ table td {
 
 footer{
   height:200px;
-  background-color: #8BD1EB;
+  background-color: #196e97;
   border-radius: 2px;
-  margin-top:5px;
+
 }
