@@ -28,7 +28,6 @@ $("#submit").on("click", function () {
       cleardata();
 
       var op = "<table>";
-      op += "<tr><th > CITY </th></tr>";
 
       //populate the modal with the cities
       populatedatainsertmodal(op, response);
@@ -101,7 +100,7 @@ function populatedatainsertmodal(op, response) {
     data-city-id="${result.id}">  
    <img src="${
       result.country_flag_url
-      }" align="left"></img>&nbsp; &nbsp;&nbsp; &nbsp; ${result.name} </td>`;
+      }" align="left"></img>&nbsp; &nbsp;&nbsp; &nbsp;<span> ${result.name}<span> </td>`;
   }
 
   op += "</table>";
