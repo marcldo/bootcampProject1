@@ -114,7 +114,7 @@ function populatezomatodata(response) {
   collectionsTable += "<tr><th> RESTAURANTS </th></tr>";
   for (var i = 0; i < 10; i++) {
     var result = response.collections[i].collection;
-    collectionsTable += `<tr><td><a href=${
+    collectionsTable += `<tr><td class="resultContainer"><div><a href=${
       result.share_url
       } target = "_blank"><img src=${
       result.image_url
@@ -122,9 +122,9 @@ function populatezomatodata(response) {
       <div class=tableTitle>${
       result.title
       }</div>
-      <div class=tableDesc>${
+      <div class=tableDesc></a>${
       result.description
-      }</div></a></td></tr>`;
+      }</div></td></tr>`;
   }
   collectionsTable += "</table>";
   document.getElementById("collectionsData").innerHTML = collectionsTable;
@@ -137,7 +137,7 @@ function displayeventdata(response) {
   for (var i = 0; i < 10; i++) {
     var result = response._embedded.events[i];
 
-    eventsTable += `<tr><td><a href=${result.url} target= "_blank"><img src=${
+    eventsTable += `<tr><td class="resultContainer"><a href=${result.url} target= "_blank"><img src=${
       result.images[0].url
       } align="left" width="300" height="180"> <span class="tableTitle">${result.name}</span></a> <span class="tableDesc"> ${
       result._embedded.venues[0].name
