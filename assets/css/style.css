@@ -6,6 +6,17 @@ body {
   background: white;
 }
 
+nav{
+  color: rgb(13, 55, 77);
+  height: 100%;
+}
+nav a{
+  margin-top: 5px;
+  margin-left: 25px;
+  font-size: 15px;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
 /*  Map marker */
 .input-container input[type=text] {
   padding-top: 10px;
@@ -32,7 +43,6 @@ body {
 header{
   background-color:#196e97;
   height: 50px;
-  border-radius: 2px;
   z-index: 2;
 }
 
@@ -43,13 +53,6 @@ header{
   top: 24px;
   padding-left: 10px;
   color: rgb(47, 52, 58);
-}
-
-header{
-  background-color:#196e97;
-  height: 50px;
-  border-radius: 2px;
-  z-index: 2;
 }
 
 .jumbotron{
@@ -101,11 +104,9 @@ header{
 
 
 #mapMarker {
-  position: absolute;
+  position: fixed;
+  top: 282px;
   font-size: 20px;
-  left: 3;
-  top: 10px;
-  padding-left: 15px;
   color: rgb(47, 52, 58);
 }
 
