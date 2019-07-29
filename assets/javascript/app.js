@@ -118,9 +118,13 @@ function populatezomatodata(response) {
       result.share_url
       } target = "_blank"><img src=${
       result.image_url
-      } align="left" width="300" height="200">${
+      } align="left" width="180" height="180">
+      <div class=tableTitle>${
+      result.title
+      }</div>
+      <div class=tableDesc>${
       result.description
-      }</a></td></tr>`;
+      }</div></a></td></tr>`;
   }
   collectionsTable += "</table>";
   document.getElementById("collectionsData").innerHTML = collectionsTable;
@@ -135,9 +139,9 @@ function displayeventdata(response) {
 
     eventsTable += `<tr><td><a href=${result.url} target= "_blank"><img src=${
       result.images[0].url
-      } align="left" width="300" height="200"> ${result.name}</a> <br><br> ${
+      } align="left" width="300" height="180"> <span class="tableTitle">${result.name}</span></a> <span class="tableDesc"> ${
       result._embedded.venues[0].name
-      } <br><br> ${result.dates.start.localDate}</td></tr>`;
+      }</span> <span class="tableDesc"> ${result.dates.start.localDate}</span> </td></tr>`;
   }
   eventsTable += "</table>";
   document.getElementById("eventsData").innerHTML = eventsTable;

@@ -7,13 +7,12 @@ body {
 }
 
 nav{
-  color: rgb(13, 55, 77);
+  color: rgba(0, 0, 0, 0.445);
   height: 100%;
 }
 nav a{
   margin-top: 5px;
   margin-left: 25px;
-  font-size: 15px;
   font-family: 'Josefin Sans', sans-serif;
 }
 
@@ -49,8 +48,7 @@ header{
 #mapMarker {
   position: absolute;
   left: 3;
-  top: 5px;
-  top: 24px;
+  top:5px;
   padding-left: 10px;
   color: rgb(47, 52, 58);
 }
@@ -104,11 +102,13 @@ header{
 
 
 #mapMarker {
-  position: fixed;
-  top: 282px;
+  position: absolute;
+  bottom: 15px;
   font-size: 20px;
   color: rgb(47, 52, 58);
 }
+
+
 
 
 /* Location and Date Font Size*/
@@ -162,7 +162,12 @@ padding: 10px;
 margin: 0 auto;
 }
 
+.location:hover{
+color: #196e97;
+}
+
 /* Events and Restaurants Tables*/
+
 table th {
   font-size: 25px;
   font-family: 'Josefin Sans', sans-serif;
@@ -173,8 +178,24 @@ table th {
   text-align: center;
 }
 
+.tableTitle{
+  font-size: 20px;
+  font-weight: bold;
+  display: inline-block;
+  color:#196e97;
+  width: 50%;
+}
+
+.tableDesc{
+  font-size: 15px;
+  color:black;
+}
+
+
+
 .table-container a img {
   padding: 10px;
+  border-radius:20px;
 }
 
 .table-container td.description{
@@ -190,6 +211,5 @@ table td {
 footer{
   height:200px;
   background-color: #196e97;
-  border-radius: 2px;
 
 }
