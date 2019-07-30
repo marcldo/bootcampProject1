@@ -6,7 +6,7 @@ var tableCity;
 $("#error").html("");
 
 // Actions to be performed onclick of search button
-$("#submit").on("click", function() {
+$("#submit").on("click", function () {
   $("#cityheader").html("");
   $("#error").html("");
   let cityName = $("#cities")
@@ -20,10 +20,10 @@ $("#submit").on("click", function() {
   $.ajax({
     url: queryURL,
     method: "GET",
-    beforeSend: function(xhr) {
+    beforeSend: function (xhr) {
       xhr.setRequestHeader("user-key", "800b518a5824533907d36cfa8844ff50 ");
     }
-  }).then(function(response) {
+  }).then(function (response) {
     if (response.location_suggestions.length === 0) {
       $("#datainsert").html(`<p>Sorry No Cities Found</p>`);
       // Calling cleardata function to clear all inputs
@@ -41,7 +41,7 @@ $("#submit").on("click", function() {
 });
 
 //Action to be performed onclick of modal data insert
-$("#datainsert").on("click", ".location", function(e) {
+$("#datainsert").on("click", ".location", function (e) {
   // gets cityname,state,city onclick of any row
 
   var tableCity = $(this).data("name");
@@ -61,7 +61,7 @@ $("#datainsert").on("click", ".location", function(e) {
   // if (tableCity != "" && city != "" && state != "") {
   //Zomato queryUrl for API call
   var tQueryURL =
-    "https://app.ticketmaster.com/discovery/v2/events?apikey=7elxdku9GGG5k8j0Xm8KWdANDgecHMV0&locale=*&city=" +
+    "https://app.ticketmaster.com/discovery/v2/events?apikey=7elxdku9GGG5k8j0Xm8KWdANDgecHMV0&locale=*&sort=date,asc&city=" +
     city +
     "&stateCode=" +
     state;
@@ -70,7 +70,7 @@ $("#datainsert").on("click", ".location", function(e) {
   $.ajax({
     url: tQueryURL,
     method: "GET"
-  }).then(function(response) {
+  }).then(function (response) {
     checkEvent = response.page.totalElements;
     console.log(includesCityorState(response));
     if (checkEvent === 0 && checkCollection === false) {
@@ -102,10 +102,10 @@ $("#datainsert").on("click", ".location", function(e) {
   $.ajax({
     url: zQueryURL,
     method: "GET",
-    beforeSend: function(xhr) {
+    beforeSend: function (xhr) {
       xhr.setRequestHeader("user-key", "800b518a5824533907d36cfa8844ff50");
     }
-  }).then(function(response) {
+  }).then(function (response) {
     // checking if collections property exists in JSON response
     console.log(response);
     if (response.collections) {
@@ -130,11 +130,11 @@ function populatedatainsertmodal(op, response) {
     console.log(result);
     op += `<tr> <td class="location" data-name="${result.name}" data-id="${
       result.country_id
-    }" data-state="${result.state_code}" 
+      }" data-state="${result.state_code}" 
     data-city-id="${result.id}">  
    <img src="${
-     result.country_flag_url
-   }" align="left"></img>&nbsp; &nbsp;<span> ${result.name}<span> </td>`;
+      result.country_flag_url
+      }" align="left"></img>&nbsp; &nbsp;<span> ${result.name}<span> </td>`;
   }
 
   op += "</table>";
@@ -148,13 +148,13 @@ function populatezomatodata(response) {
   collectionsTable += "<tr><th> RESTAURANTS </th></tr>";
   for (var i = 0; i < 10; i++) {
     var result = response.collections[i].collection;
-    collectionsTable += `<tr><td class="resultContainer"><div><a href=${
+    collectionsTable += `<tr><td class="resultContainer"><a href=${
       result.share_url
-    } target = "_blank"><img src=${
+      } target = "_blank"><div class="clickDiv"><img src=${
       result.image_url
-    } align="left" width="180" height="180">
+      } align="left" width="180" height="180">
       <div class=tableTitle>${result.title}</div>
-      <div class=tableDesc></a>${result.description}</div></td></tr>`;
+      <div class=tableDesc>${result.description}</div></div></a></td></tr>`;
   }
   collectionsTable += "</table>";
   document.getElementById("collectionsData").innerHTML = collectionsTable;
@@ -169,15 +169,15 @@ function displayeventdata(response) {
 
     eventsTable += `<tr><td class="resultContainer"><a href=${
       result.url
-    } target= "_blank"><img src=${
+      } target= "_blank"><img src=${
       result.images[0].url
-    } align="left" width="300" height="180"> <span class="tableTitle">${
+      } align="left" width="300" height="180"> <span class="tableTitle">${
       result.name
-    }</span></a> <span class="tableDesc"> ${
+      }</span></a> <span class="tableDesc"> ${
       result._embedded.venues[0].name
-    }</span> <span class="tableDesc"> ${
+      }</span> <span class="tableDesc"> ${
       result.dates.start.localDate
-    }</span> </td></tr>`;
+      }</span> </td></tr>`;
   }
   eventsTable += "</table>";
   document.getElementById("eventsData").innerHTML = eventsTable;

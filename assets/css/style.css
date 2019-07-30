@@ -7,7 +7,7 @@ body {
 }
 
 nav{
-  color: rgba(0, 0, 0, 0.445);
+  color: rgba(0, 0, 0, 0.308);
   height: 100%;
 }
 nav a{
@@ -36,8 +36,11 @@ nav a{
 
 #cityheader
 {
+  font-family: 'Josefin Sans', sans-serif;
   text-align: center;
-  text-shadow: 2px 2px blue;
+  color:  #196e97;
+  margin: 0;
+  font-size: 60px;
 }
 
 .input-container {
@@ -170,6 +173,7 @@ margin: 0 auto;
 
 .location:hover{
 color: #196e97;
+cursor: pointer;
 }
 
 /* Events and Restaurants Tables*/
@@ -190,13 +194,7 @@ table th {
   text-align: center;
 }
 
-.tableTitle{
-  padding-top: 10px;
-  font-size: 20px;
-  font-weight: bold;
-  display: inline-block;
-  color:#196e97;
-}
+
 
 .resultContainer:hover{
 color: #196e97;
@@ -208,10 +206,25 @@ border-radius: 15px;
 width: 100%;
 }
 
+.clickDiv{
+  height: 180px;
+}
+
+.tableTitle{
+  padding-top: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  display: inline-block;
+  color:#196e97;
+  width: 50%;
+}
+
 .tableDesc{
+  display: inline-block;
   padding-top: 10px;
   font-size: 15px;
   color:black;
+  width: 50%;
 }
 
 .table-container a img {
@@ -230,7 +243,13 @@ table td {
 
 
 footer{
-  height:20px;
+  height: 50px;
   background-color: #196e97;
+}
 
+.footerText{
+  padding-top: 15px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: bolder;
+  color: rgba(0, 0, 0, 0.308);
 }
