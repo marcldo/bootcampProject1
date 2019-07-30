@@ -167,10 +167,10 @@ color: #196e97;
 }
 
 /* Events and Restaurants Tables*/
-.eventsData{
+#eventsData{
 width: 100%;
 }
-.collectionsData{
+#collectionsData{
 width: 100%;
 }
 
@@ -190,7 +190,6 @@ table th {
   font-weight: bold;
   display: inline-block;
   color:#196e97;
-  width: 50%;
 }
 
 .resultContainer:hover{
