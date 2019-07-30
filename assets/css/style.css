@@ -34,6 +34,12 @@ nav a{
  
 }
 
+#cityheader
+{
+  text-align: center;
+  text-shadow: 2px 2px blue;
+}
+
 .input-container {
   position: relative;
   /* padding: px; */
@@ -224,7 +230,7 @@ table td {
 
 
 footer{
-  height:200px;
+  height:20px;
   background-color: #196e97;
 
 }
